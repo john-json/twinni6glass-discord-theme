@@ -175,6 +175,29 @@ body {
   background-clip: content-box;
 }
 
+/* layout: Playback bar + grid spacing */
+.f75fb00fb7356cbe-channelTextArea {
+  backdrop-filter: blur(22px) saturate(170%);
+  background: rgba(255, 255, 255, 0.08);  /* Screenshot #1 pill */
+  border-radius: 999px;  /* Rounded like Spotify now-playing */
+}
+
+/* Message list spacing (Spotify card gap) */
+._5126c0cd07f243a0-message {
+  margin: 6px 20px;  /* Wider gutters */
+}
+
+/* Channel list items (Spotify list spacing) */
+._2ea32c412048f708-wrapper {
+  margin: 4px 12px;
+  padding: 8px 12px;  /* Spotify padding */
+}
+
+/* Right sidebar (Spotify info panel) */
+.c8ffbb79449f399c-container {
+  backdrop-filter: blur(18px) saturate(150%);
+  background: rgba(255, 255, 255, 0.04);  /* Subtle Spotify overlay */
+
 /* App background */
 ._960e4207cea8323e-bg,
 #app-mount,
