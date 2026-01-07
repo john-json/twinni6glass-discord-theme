@@ -3,6 +3,7 @@ Liquid Glass discord/vesktop theme
 
 ----- Add to Vesktop QuickCSS ---
 
+```
 /* Twinni6Glass – Tahoe Spotify theme for Vesktop
    Loads all theme files from your GitHub repo. */
 
@@ -16,3 +17,4 @@ Liquid Glass discord/vesktop theme
 
 /* Micro animations (optional) */
 @import url('https://raw.githubusercontent.com/john-json/twinni6glass-discord-theme/main/animations.css');
+```
