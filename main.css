@@ -1,6 +1,6 @@
-/* Tahoe Finder – macOS 26 Vesktop Theme
- * Liquid glass, dark/light auto-detect, Finder layout.
- * Standalone – no other theme needed.
+/* Tahoe Finder – macOS 26 Vesktop Theme (Spotify Tahoe Match)
+ * Screenshot #1 colors/layout, channels-only glass, dark/light perfect.
+ * Standalone – paste entire file to QuickCSS.
  */
 
 @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap');
@@ -15,6 +15,9 @@
   --custom-guild-list-width: calc(var(--guildbar-avatar-size) + var(--custom-guild-list-padding) * 2 + var(--border-thickness) * 2);
   --border-hover-transition: 0.22s cubic-bezier(0.25, 0.1, 0.25, 1);
   --font: 'SF Pro Display', -apple-system, system-ui, sans-serif;
+  --tahoe-radius-xl: 20px;
+  --tahoe-radius-lg: 16px;
+  --tahoe-radius-md: 12px;
 }
 
 body {
@@ -24,11 +27,27 @@ body {
   font-feature-settings: 'liga' 1, 'cv01' 1, 'ss01' 1;
 }
 
-/* Tahoe glass panels – Finder windows */
+/* ONLY CHANNELS PANEL: Finder glass + border (exact Tahoe) */
+._5e434347c823b592-sidebarList {
+  background: var(--tahoe-glass-bg);
+  backdrop-filter: blur(38px) saturate(185%);
+  -webkit-backdrop-filter: blur(38px) saturate(185%);
+  border: var(--border-thickness) solid var(--tahoe-glass-border);
+  border-radius: 0 var(--tahoe-radius-xl) var(--tahoe-radius-xl) 0;
+  box-shadow: var(--tahoe-glass-shadow);
+  transition: all 0.22s cubic-bezier(0.34, 0.16, 0.3, 1.1);
+  z-index: 10;
+
+  &:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-1px);
+  }
+}
+
+/* ALL OTHER PANELS: Transparent overlays (NO borders/backgrounds) */
 ._8946359d8adb1488-container > ._8946359d8adb1488-toolbar,
 ._8946359d8adb1488-container > ._8946359d8adb1488-contentContainer,
 ._5e434347c823b592-guilds,
-._5e434347c823b592-sidebarList,
 ._5e434347c823b592-panels,
 .f75fb00fb7356cbe-chat > .f75fb00fb7356cbe-subtitleContainer,
 .f75fb00fb7356cbe-chatContent,
@@ -58,78 +77,47 @@ body {
 .f75fb00fb7356cbe-chat > .d125d22cdfd32cfe-scrollerBase,
 .f75fb00fb7356cbe-chat > ._0b56311ebc6682e2-header,
 .f75fb00fb7356cbe-chat > ._0b56311ebc6682e2-container {
-  background: var(--tahoe-glass-bg);
-  backdrop-filter: var(--panel-backdrop-filter);
-  -webkit-backdrop-filter: var(--panel-backdrop-filter);
-  border: var(--border-thickness) solid var(--tahoe-glass-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--tahoe-glass-shadow);
-  box-sizing: border-box;
-  transition: border-color var(--border-hover-transition),
-              box-shadow var(--border-hover-transition),
-              transform var(--border-hover-transition);
-
-  &:hover {
-    border-color: var(--border-hover);
-    transform: translateY(-0.5px);
-  }
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  background: transparent;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
-/* Finder-style sidebar (channels) */
-._5e434347c823b592-sidebarList {
-  backdrop-filter: blur(36px) saturate(180%);
-  -webkit-backdrop-filter: blur(36px) saturate(180%);
-  background:
-    linear-gradient(145deg,
-      var(--tahoe-glass-highlight),
-      var(--tahoe-glass-bg));
-  border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
-}
-
-/* Chat content as floating sheet */
+/* Chat: subtle floating sheet */
 .f75fb00fb7356cbe-chatContent {
-  backdrop-filter: blur(34px) saturate(160%);
-  -webkit-backdrop-filter: blur(34px) saturate(160%);
+  backdrop-filter: blur(28px) saturate(155%);
+  -webkit-backdrop-filter: blur(28px) saturate(155%);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--tahoe-radius-md);
+  margin: 16px;
+}
+
+/* Members: Spotify info overlay */
+.c8ffbb79449f399c-container {
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--tahoe-radius-xl) 0 0 var(--tahoe-radius-xl);
+}
+
+/* Input: Spotify pill */
+.f75fb00fb7356cbe-channelTextArea {
+  backdrop-filter: blur(22px) saturate(170%);
+  -webkit-backdrop-filter: blur(22px) saturate(170%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 0.6px solid var(--tahoe-glass-highlight);
+  border-radius: 999px;
   margin: 12px;
 }
 
-/* Member list – right glass pane */
-.c8ffbb79449f399c-container {
-  backdrop-filter: blur(28px) saturate(150%);
-  -webkit-backdrop-filter: blur(28px) saturate(150%);
-  background:
-    radial-gradient(circle at top right,
-      var(--tahoe-accent, rgba(133, 171, 255, 0.35)),
-      transparent 70%),
-    var(--tahoe-glass-bg);
-  border-radius: var(--radius-xl) 0 0 var(--radius-xl);
-}
-
-/* User panel bottom glass */
-._5e434347c823b592-panels {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
-}
-
-/* Chat input glass bar */
-.f75fb00fb7356cbe-channelTextArea {
-  backdrop-filter: blur(24px) saturate(160%);
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
-  background:
-    linear-gradient(to bottom,
-      rgba(255, 255, 255, 0.12),
-      var(--tahoe-glass-bg));
-  border: 1px solid var(--tahoe-glass-highlight);
-  border-radius: var(--radius-lg);
-}
-
-/* Channel rows – Finder list highlight */
+/* Channel rows: Spotify spacing */
 ._2ea32c412048f708-wrapper,
 ._972a0d22c8afa7f0-interactive {
   border-radius: 12px;
-  margin: 2px 8px;
+  margin: 4px 12px;
+  padding: 8px 12px;
   transition: all 0.18s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 ._2ea32c412048f708-wrapper:hover,
@@ -138,18 +126,14 @@ body {
   transform: translateY(-0.5px);
 }
 ._2ea32c412048f708-modeSelected._2ea32c412048f708-wrapper {
-  background: linear-gradient(120deg,
-    var(--active),
-    var(--accent-3));
-  box-shadow:
-    0 0 0 1px var(--tahoe-glass-highlight),
-    0 18px 40px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(120deg, var(--active), var(--accent-3));
+  box-shadow: 0 0 0 1px var(--tahoe-glass-highlight), 0 18px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* Message rows */
+/* Messages: Spotify cards */
 ._5126c0cd07f243a0-message {
   border-radius: 12px;
-  margin: 3px 14px;
+  margin: 6px 20px;
   transition: all 0.16s ease-out;
 }
 ._5126c0cd07f243a0-message:hover {
@@ -157,11 +141,11 @@ body {
   transform: translateY(-0.3px);
 }
 
-/* Unread bar – Tahoe accent pill */
+/* Unread pill */
 ._0f481cbbd7530492-newMessagesBar {
   border-radius: 999px;
   background: var(--accent-3);
-  box-shadow: 0 8px 24px rgba(90, 150, 255, 0.6);
+  box-shadow: 0 8px 24px rgba(149, 149, 149, 0.5);
 }
 
 /* Scrollbars */
@@ -175,35 +159,12 @@ body {
   background-clip: content-box;
 }
 
-/* layout: Playback bar + grid spacing */
-.f75fb00fb7356cbe-channelTextArea {
-  backdrop-filter: blur(22px) saturate(170%);
-  background: rgba(255, 255, 255, 0.08);  /* Screenshot #1 pill */
-  border-radius: 999px;  /* Rounded like Spotify now-playing */
-}
-
-/* Message list spacing (Spotify card gap) */
-._5126c0cd07f243a0-message {
-  margin: 6px 20px;  /* Wider gutters */
-}
-
-/* Channel list items (Spotify list spacing) */
-._2ea32c412048f708-wrapper {
-  margin: 4px 12px;
-  padding: 8px 12px;  /* Spotify padding */
-}
-
-/* Right sidebar (Spotify info panel) */
-.c8ffbb79449f399c-container {
-  backdrop-filter: blur(18px) saturate(150%);
-  background: rgba(255, 255, 255, 0.04);  /* Subtle Spotify overlay */
-
-/* App background */
+/* App background: Spotify gradient */
 ._960e4207cea8323e-bg,
 #app-mount,
 body {
   background:
-    radial-gradient(circle at 20% 80%, rgba(133, 171, 255, 0.22), transparent 60%),
-    radial-gradient(circle at 80% 20%, rgba(25, 50, 110, 0.4), transparent 70%),
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.12), transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.15), transparent 70%),
     var(--background-base-lowest);
 }
