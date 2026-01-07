@@ -37,7 +37,7 @@ body {
   }
 /* ONLY CHANNELS PANEL: Finder glass + border */
 ._5e434347c823b592-sidebarList {
-  background: var(--tahoe-glass-bg);
+  background: rgb(30, 30, 30);;
   backdrop-filter: blur(38px) saturate(185%);
   -webkit-backdrop-filter: blur(38px) saturate(185%);
   border: none;
