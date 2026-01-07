@@ -107,7 +107,7 @@ body {
   backdrop-filter: blur(22px) saturate(170%);
   -webkit-backdrop-filter: blur(22px) saturate(170%);
   background: rgba(255, 255, 255, 0.08);
-  border: 0.6px solid var(--tahoe-glass-highlight);
+  border:none;
   border-radius: 999px;
   margin: 12px;
 }
@@ -162,8 +162,8 @@ body {
 ._5126c0cd07f243a0-mentioned::before,
 ._5126c0cd07f243a0-replying::before {
   border-radius: 4px !important;
-  width: 3px !important;
-  opacity: 0.8;
+  width: 1px !important;
+  opacity: 0.5;
 }
 .reducedMotion-3_5b6T ._5126c0cd07f243a0-message,
 ._5126c0cd07f243a0-message::after,
@@ -177,7 +177,7 @@ body {
 
 /* Unread pill */
 ._0f481cbbd7530492-newMessagesBar {
-  border-radius: 999px;
+  border-radius: 50%;
   background: var(--accent-3);
   box-shadow: 0 8px 24px rgba(149, 149, 149, 0.5);
 }
@@ -188,8 +188,8 @@ body {
 }
 ::-webkit-scrollbar-thumb {
   background: var(--tahoe-scroll-thumb);
-  border-radius: 999px;
-  border: 2px solid transparent;
+  border-radius: 50%;
+  border: 1px solid transparent;
   background-clip: content-box;
 }
 
