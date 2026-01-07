@@ -1,6 +1,6 @@
-/* Tahoe Finder – macOS 26 Vesktop Theme (Spotify Tahoe Match)
- * Screenshot #1 colors/layout, channels-only glass, dark/light perfect.
- * Standalone – paste entire file to QuickCSS.
+/* Tahoe Finder – macOS 26 Vesktop Theme (Screenshot #3 PERFECT)
+ * Spotify Tahoe colors/layout, channels-only glass, fixed messages.
+ * COMPLETE FILE – paste entire to QuickCSS.
  */
 
 @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap');
@@ -27,7 +27,7 @@ body {
   font-feature-settings: 'liga' 1, 'cv01' 1, 'ss01' 1;
 }
 
-/* ONLY CHANNELS PANEL: Finder glass + border (exact Tahoe) */
+/* ONLY CHANNELS PANEL: Finder glass + border */
 ._5e434347c823b592-sidebarList {
   background: var(--tahoe-glass-bg);
   backdrop-filter: blur(38px) saturate(185%);
@@ -44,7 +44,7 @@ body {
   }
 }
 
-/* ALL OTHER PANELS: Transparent overlays (NO borders/backgrounds) */
+/* ALL OTHER PANELS: Transparent overlays */
 ._8946359d8adb1488-container > ._8946359d8adb1488-toolbar,
 ._8946359d8adb1488-container > ._8946359d8adb1488-contentContainer,
 ._5e434347c823b592-guilds,
@@ -79,13 +79,13 @@ body {
 .f75fb00fb7356cbe-chat > ._0b56311ebc6682e2-container {
   backdrop-filter: blur(20px) saturate(140%);
   -webkit-backdrop-filter: blur(20px) saturate(140%);
-  background: transparent;
+  background: transparent !important;
   border: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
 }
 
-/* Chat: subtle floating sheet */
+/* Chat content */
 .f75fb00fb7356cbe-chatContent {
   backdrop-filter: blur(28px) saturate(155%);
   -webkit-backdrop-filter: blur(28px) saturate(155%);
@@ -94,7 +94,7 @@ body {
   margin: 16px;
 }
 
-/* Members: Spotify info overlay */
+/* Members overlay */
 .c8ffbb79449f399c-container {
   backdrop-filter: blur(18px) saturate(150%);
   -webkit-backdrop-filter: blur(18px) saturate(150%);
@@ -102,7 +102,7 @@ body {
   border-radius: var(--tahoe-radius-xl) 0 0 var(--tahoe-radius-xl);
 }
 
-/* Input: Spotify pill */
+/* Input pill */
 .f75fb00fb7356cbe-channelTextArea {
   backdrop-filter: blur(22px) saturate(170%);
   -webkit-backdrop-filter: blur(22px) saturate(170%);
@@ -112,7 +112,7 @@ body {
   margin: 12px;
 }
 
-/* Channel rows: Spotify spacing */
+/* Channel rows */
 ._2ea32c412048f708-wrapper,
 ._972a0d22c8afa7f0-interactive {
   border-radius: 12px;
@@ -130,15 +130,49 @@ body {
   box-shadow: 0 0 0 1px var(--tahoe-glass-highlight), 0 18px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* Messages: Spotify cards */
-._5126c0cd07f243a0-message {
-  border-radius: 12px;
-  margin: 6px 20px;
-  transition: all 0.16s ease-out;
+/* MESSAGE BUBBLES: Screenshot #3 PERFECT */
+._5126c0cd07f243a0-message,
+.cozyMessage-1DWF9U,
+.compactMessage-4SOuOQ {
+  margin: 2px 16px !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: background 0.15s ease-out;
 }
-._5126c0cd07f243a0-message:hover {
-  background: var(--message-hover);
-  transform: translateY(-0.3px);
+._5126c0cd07f243a0-message:hover,
+.cozyMessage-1DWF9U:hover {
+  background: var(--message-hover) !important;
+}
+.contents-2a7bVT,
+.compact-3BU8UT {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.wrapper-2txm5H {
+  margin-right: 12px !important;
+}
+.timestamp-3K9iW6,
+.username-3I1v2W {
+  margin-left: 4px !important;
+  font-size: 0.875rem !important;
+}
+._5126c0cd07f243a0-mentioned::before,
+._5126c0cd07f243a0-replying::before {
+  border-radius: 4px !important;
+  width: 3px !important;
+  opacity: 0.8;
+}
+.reducedMotion-3_5b6T ._5126c0cd07f243a0-message,
+._5126c0cd07f243a0-message::after,
+._5126c0cd07f243a0-message::before {
+  box-shadow: none !important;
+  border: none !important;
+}
+.scrollableContainer-2NUZem {
+  padding: 8px 12px !important;
 }
 
 /* Unread pill */
@@ -159,7 +193,7 @@ body {
   background-clip: content-box;
 }
 
-/* App background: Spotify gradient */
+/* App background */
 ._960e4207cea8323e-bg,
 #app-mount,
 body {
