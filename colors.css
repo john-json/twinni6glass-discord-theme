@@ -14,7 +14,7 @@
 /* DARK (exact screenshot #1 dark) */
 :root[data-theme="dark"],
 :root.theme-dark {
-  --tahoe-glass-bg: rgba(18, 18, 18, 0.95);      /* Spotify dark */
+  --tahoe-glass-bg: rgba(12, 12, 12, 1);      /* Spotify dark */
   --tahoe-glass-highlight: rgba(255, 255, 255, 0.22);
   --tahoe-glass-border: rgba(255, 255, 255, 0.40);
   --tahoe-scroll-thumb: rgba(255, 255, 255, 0.32);
