@@ -198,7 +198,5 @@ body {
 #app-mount,
 body {
   background:
-    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05), transparent 60%),
-    radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.15), transparent 70%),
-    var(--background-base-lowest);
+#1c1c1c;
 }
