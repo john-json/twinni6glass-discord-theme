@@ -8,9 +8,9 @@
 :root {
   container-name: root;
   --custom-guild-list-padding: 16px;
-  --panel-backdrop-filter: blur(32px) saturate(160%);
-  --gap: 14px;
-  --divider-thickness: 3px;
+  --panel-backdrop-filter: blur(12px) saturate(16%);
+  --gap: 12px;
+  --divider-thickness: 1px;
   --border-thickness: 0.5px;
   --custom-guild-list-width: calc(var(--guildbar-avatar-size) + var(--custom-guild-list-padding) * 2 + var(--border-thickness) * 2);
   --border-hover-transition: 0.22s cubic-bezier(0.25, 0.1, 0.25, 1);
