@@ -11,7 +11,7 @@
   --panel-backdrop-filter: blur(32px) saturate(160%);
   --gap: 14px;
   --divider-thickness: 3px;
-  --border-thickness: 0.8px;
+  --border-thickness: 0.5px;
   --custom-guild-list-width: calc(var(--guildbar-avatar-size) + var(--custom-guild-list-padding) * 2 + var(--border-thickness) * 2);
   --border-hover-transition: 0.22s cubic-bezier(0.25, 0.1, 0.25, 1);
   --font: 'SF Pro Display', -apple-system, system-ui, sans-serif;
@@ -39,7 +39,7 @@ body {
   z-index: 10;
 
   &:hover {
-    border-color: var(--border-hover);
+    border-color: none;
     transform: translateY(-1px);
   }
 }
